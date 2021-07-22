@@ -48,5 +48,5 @@ LittleCorporal embeds the shellcode and the target process into `Loader.cs` and 
 ## Usage
 1. __YOU MUST FETCH THE ENTIRE PROJECT IN ORDER TO USE__! LittleCorporal uses relative paths for additional resources, such as Donut.
 2. Once obtaining the entire project, change your working directory to the `bin\Debug` directory (`cd C:\Path\to\LittleCorporal\bin\Debug`)
-3. Specify the path to your shellcode file and the process on the remote machine which you would like to inject into. The process specified must already be running! (`LittleCorporal.exe C:\Path\To\Shellcode.bin explorer.exe`)
+3. Specify the path to your shellcode file on the machine you are executing `LittleCorporal.exe` from and the already running process on the machine which you would like to execute the Word document on. (`LittleCorporal.exe C:\Path\To\Shellcode.bin explorer.exe`)
 4. LittleCorporal will then output the path to the final Word document
