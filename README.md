@@ -48,5 +48,6 @@ LittleCorporal embeds the shellcode and the target process into `Loader.cs` and 
 ## Usage
 1. __YOU MUST FETCH THE ENTIRE PROJECT IN ORDER TO USE__! LittleCorporal uses relative paths for additional resources, such as Donut.
 2. Once obtaining the entire project, change your working directory to the `bin\Debug` directory (`cd C:\Path\to\LittleCorporal\bin\Debug`)
-3. Specify the path to your shellcode file on the machine you are executing `LittleCorporal.exe` from and the already running process on the machine which you would like to execute the Word document on. (`LittleCorporal.exe C:\Path\To\Shellcode.bin explorer.exe`)
-4. LittleCorporal will then output the path to the final Word document
+3. The thread hijacking code first performs a check if the machine executing the Word document is domain joined. If running on a non-domain joined machine, please edit [this line of code](https://github.com/connormcgarr/LittleCorporal/blob/main/LittleCorporal/LittleCorporal.Loader/Loader.cs#L266) to `bool FUNC1 = true;
+4. Specify the path to your shellcode file on the machine you are executing `LittleCorporal.exe` from and the already running process on the machine which you would like to execute the Word document on. (`LittleCorporal.exe C:\Path\To\Shellcode.bin explorer.exe`)
+5. LittleCorporal will then output the path to the final Word document
