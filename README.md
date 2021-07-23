@@ -48,7 +48,6 @@ LittleCorporal embeds the shellcode and the target process name into `Loader.cs`
 ## Requirements
 1. LittleCorporal assembles the .NET thread hijacking artifact using .NET v2. Please make sure .NET v2 is installed on the machine you are generating the Word document with (make sure `C:\Windows\Microsoft.NET\Framework64\v2.0.50727\` exists).
 2. This project uses [Microsoft.Office interop objects](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interop/how-to-access-office-onterop-objects). This means you will need to use the Visual Studio Installer to install Visual Studio Tools for Office (VSTO). Instructions can be found [here](https://docs.microsoft.com/en-us/visualstudio/vsto/how-to-install-the-visual-studio-tools-for-office-runtime-redistributable?view=vs-2019). This step is only necessary if you plan on recompiling the main `LittleCorporal.exe` binary (which is already included in the `LittleCorporal\bin\Debug` directory).
-3. The shellcode that you send through LittleCorporal _must_ be configured to terminate the thread versus the process. This can be configured with msfvenom via `EXITFUNC=thread`, or configured the same way in Cobalt Strike via Aggressor.
 
 ## Usage
 1. __YOU MUST FETCH THE ENTIRE PROJECT IN ORDER TO USE__! LittleCorporal uses relative paths for additional resources, such as Donut.
