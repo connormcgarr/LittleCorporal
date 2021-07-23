@@ -84,12 +84,9 @@ namespace LittleCorporal
             return donutArtifact;
         }
 
-        // Create the 
+        // Create the Word document
         public static void CreateWordDoc(string donutartifactLocation)
         {
-            // Store the shellcode blob path from Donut
-            donutartifactLocation = DonutShellcode();
-
             // Open the Donut bin file and convert to Base64 encoded string
             FileStream fsDonut = new FileStream(donutartifactLocation, FileMode.Open);
             BinaryReader brDonut = new BinaryReader(fsDonut);
@@ -246,8 +243,11 @@ namespace LittleCorporal
                     text = text.Replace(shellcodeString, "REPLACE2");
                     File.WriteAllText(path, text);
 
+                    // Resolve the path of the Donut shellcode file
+                    string donutPath = DonutShellcode();
+
                     // Create the Word document
-                    CreateWordDoc(shellcodeString);       
+                    CreateWordDoc(donutPath);       
                 }
             }
         }

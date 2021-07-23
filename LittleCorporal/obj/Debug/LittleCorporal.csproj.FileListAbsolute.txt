@@ -1,6 +1,0 @@
-C:\Users\ANON\Desktop\LittleCorporal\bin\Debug\LittleCorporal.exe
-C:\Users\ANON\Desktop\LittleCorporal\bin\Debug\LittleCorporal.pdb
-C:\Users\ANON\Desktop\LittleCorporal\obj\Debug\LittleCorporal.csproj.CoreCompileInputs.cache
-C:\Users\ANON\Desktop\LittleCorporal\obj\Debug\LittleCorporal.exe
-C:\Users\ANON\Desktop\LittleCorporal\obj\Debug\LittleCorporal.pdb
-C:\Users\ANON\Desktop\LittleCorporal\obj\Debug\LittleCorporal.csprojAssemblyReference.cache
