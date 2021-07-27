@@ -58,6 +58,6 @@ If you plan on using this project for active red team operations, please conside
 
 ## Usage
 1. __YOU MUST FETCH THE ENTIRE PROJECT IN ORDER TO USE__! LittleCorporal uses relative paths for additional resources, such as Donut.
-2. Once obtaining the entire project, change your working directory to the `bin\Release` directory (`cd C:\Path\to\LittleCorporal\bin\Release`)
+2. Once obtaining the entire project, change your working directory to the `bin\Release` directory (`cd C:\Path\to\LittleCorporal\bin\Release`). It is recommended that if you plan to re-compile this project that you use a Release build instead of a Debug build.
 3. Specify the path to your shellcode file on the machine you are executing `LittleCorporal.exe` from and the already running process on the machine which you would like to execute the Word document on. (`LittleCorporal.exe C:\Path\To\Shellcode.bin explorer.exe`)
 4. LittleCorporal will then output the path to the final Word document
