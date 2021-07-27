@@ -1,19 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using System.Data.SqlTypes;
-using System.Text.RegularExpressions;
 using System.Diagnostics;
-using System.Globalization;
 using Microsoft.Vbe.Interop;
 using Microsoft.Win32;
-using System.Runtime.CompilerServices;
-using System.Net.NetworkInformation;
-using System.Drawing;
-using Microsoft.Office.Interop.Word;
-using System.Security.Cryptography.X509Certificates;
 
 namespace LittleCorporal
 {
