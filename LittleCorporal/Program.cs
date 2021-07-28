@@ -66,6 +66,14 @@ namespace LittleCorporal
             int index = currentdirectoryTemp.IndexOf("bin");
             string donutArtifact = currentdirectoryTemp.Substring(0, index) + "Artifacts\\payload.bin";
 
+            // Error handling to see if the file was successfully generated
+            bool existsDonut = File.Exists(donutArtifact);
+            if (!existsDonut)
+            {
+                Console.WriteLine("[-] Error! Unable to generate Donut artifact.\n");
+                Environment.Exit(0);
+            }
+
             // Print update
             Console.WriteLine("[+] Donut artifact is located at: {0}", donutArtifact);
 
@@ -130,10 +138,27 @@ namespace LittleCorporal
             // Save the document
             var worddocumentPath = Path.Combine(getcurrentPath, "..\\..\\Artifacts\\Form.doc");
             object wordPath = worddocumentPath;
+            string tempPath = worddocumentPath;
 
             // Specifying 0 to make sure the macro is saved
             wordDocument.SaveAs(ref wordPath, 0);
-            
+
+            // Error handling to see if the file was successfully generated
+            bool existsWord = File.Exists(tempPath);
+            if (!existsWord)
+            {
+                Console.WriteLine("[-] Error! Unable to generate the Word document.\n");
+
+                // Close the document and quit Word
+                wordDocument.Close(ref missingObject, ref missingObject, ref missingObject);
+                wordDocument = null;
+                winWord.Quit(ref missingObject, ref missingObject, ref missingObject);
+                winWord = null;
+
+                // Exit
+                Environment.Exit(0);
+            }
+
             // Print update
             Console.Write("[+] Path to Word document: {0}\n", wordDocument.Path + "\\" + wordDocument.Name);
 

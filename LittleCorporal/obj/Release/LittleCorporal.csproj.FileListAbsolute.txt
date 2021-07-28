@@ -2,6 +2,7 @@ C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\bin\Release\LittleCorporal.e
 C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\bin\Release\LittleCorporal.exe
 C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\bin\Release\LittleCorporal.pdb
 C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\bin\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\obj\Release\LittleCorporal.csprojAssemblyReference.cache
 C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\obj\Release\LittleCorporal.csproj.CoreCompileInputs.cache
 C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\obj\Release\LittleCorporal.csproj.Fody.CopyLocal.cache
 C:\Users\ANON\Desktop\LittleCorporal\LittleCorporal\obj\Release\LittleCorporal.csproj.CopyComplete
