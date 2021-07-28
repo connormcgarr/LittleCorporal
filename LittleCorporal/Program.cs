@@ -174,17 +174,46 @@ namespace LittleCorporal
             // Print ASCII art
             AsciiArt();
 
+            // Argument for cleaning the Artifacts directory
+            string cleanArgument = "clean";
+
             // If no arguments are displayed, print the usage
             if (args.Length == 0)
             {
-                Console.WriteLine("\n[+] Usage: LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
+                Console.WriteLine("\n[+] Create a Word document\n   [+] LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
+                Console.WriteLine("\n[+] Clean previously artifacts\n   [+] LittleCorporal.exe clean");
+            }
+            else if (args.Length <= 1)
+            {
+                if ((String.Compare(args[0], cleanArgument, StringComparison.OrdinalIgnoreCase) == 0))
+                {
+                    // Print update
+                    Console.WriteLine("\n[+] Cleaning LittleCorporal...\n");
+
+                    // Resolve the path to the Artifacts directory
+                    string targetcleanPath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\Artifacts\\");
+
+                    // Delete all of the files
+                    string[] allFiles = Directory.GetFiles(targetcleanPath);
+                    foreach (string targetFiles in allFiles)
+                    {
+                        File.Delete(targetFiles);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\n[-] Error! Please only enter a shellcode path and process to inject in!\n");
+                    Console.WriteLine("[+] Create a Word document\n   [+] LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
+                    Console.WriteLine("\n[+] Clean previously artifacts\n   [+] LittleCorporal.exe clean");
+                }
             }
 
             // Make sure command line arguments don't surpass two (shellcode path and remote argument)
             else if (args.Length > 2 || args.Length < 2)
             {
                 Console.WriteLine("\n[-] Error! Please only enter a shellcode path and process to inject in!\n");
-                Console.WriteLine("[+] Usage: LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
+                Console.WriteLine("[+] Create a Word document\n   [+] LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
+                Console.WriteLine("\n[+] Clean previously artifacts\n   [+] LittleCorporal.exe clean");
             }
             else
             {
@@ -199,6 +228,8 @@ namespace LittleCorporal
                 if (!exists)
                 {
                     Console.WriteLine("[-] Error! Could not find shellcode file. Does it exist? Did you specify the correct path?\n");
+                    Console.WriteLine("[+] Create a Word document\n   [+] LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
+                    Console.WriteLine("\n[+] Clean previously artifacts\n   [+] LittleCorporal.exe clean");
                     Environment.Exit(0);
                 }
                 else
