@@ -59,9 +59,6 @@ namespace LittleCorporal
             processDonut.Start();
             processDonut.WaitForExit();
 
-            // Print update
-            Console.WriteLine("[+] Ran the .NET assembly through Donut!");
-
             // Locate Donut artifact
             int index = currentdirectoryTemp.IndexOf("bin");
             string donutArtifact = currentdirectoryTemp.Substring(0, index) + "Artifacts\\payload.bin";
@@ -73,6 +70,9 @@ namespace LittleCorporal
                 Console.WriteLine("[-] Error! Unable to generate Donut artifact.\n");
                 Environment.Exit(0);
             }
+
+            // Print update
+            Console.WriteLine("[+] Ran the .NET assembly through Donut!");
 
             // Print update
             Console.WriteLine("[+] Donut artifact is located at: {0}", donutArtifact);
@@ -227,7 +227,7 @@ namespace LittleCorporal
                 // Error handling
                 if (!exists)
                 {
-                    Console.WriteLine("[-] Error! Could not find shellcode file. Does it exist? Did you specify the correct path?\n");
+                    Console.WriteLine("\n[-] Error! Could not find shellcode file. Does it exist? Did you specify the correct path?\n");
                     Console.WriteLine("[+] Create a Word document\n   [+] LittleCorporal.exe C:\\Path\\To\\Shellcode.bin name_of_desired_injection_process_on_remote_machine.exe");
                     Console.WriteLine("\n[+] Clean previously artifacts\n   [+] LittleCorporal.exe clean");
                     Environment.Exit(0);
